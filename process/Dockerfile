@@ -9,7 +9,7 @@ WORKDIR /code
 COPY requirements.txt .
 
 # Instala las dependencias del proyecto
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copia el código fuente del proyecto al contenedor
 ADD  . /code/
