@@ -3,7 +3,7 @@ djangorestframework
 django-rest-swagger
 drf-yasg
 django-cors-headers
-yfinance --upgrade --no-cache-dir
+yfinance 
 pandas
 pandas-plotly
 
