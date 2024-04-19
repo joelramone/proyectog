@@ -1,0 +1,15 @@
+Django
+djangorestframework
+django-rest-swagger
+drf-yasg
+django-cors-headers
+yfinance --upgrade --no-cache-dir
+pandas
+pandas-plotly
+
+
+
+
+
+
+
