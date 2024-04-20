@@ -19,6 +19,6 @@ jobs:
 
       - name: Sync applications
         run: |
-          argocd login --insecure --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} https://192.168.49.2:31013
+          argocd login --insecure --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} 192.168.49.2:31013
           argocd app sync django-gui 
           argocd app sync django-backend
