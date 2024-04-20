@@ -10,7 +10,7 @@
     <div class="container">
         <!--Inicio formulario-->
         <h1>Formulario</h1>
-        <form method="post" action="http://0.0.0.0:8002/ticket/">
+        <form method="post" action="http://192.168.49.2:31828/ticket/">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="fecha_inicio" class="form-label">Fecha de inicio</label>
@@ -85,7 +85,7 @@
             axios.defaults.headers.common['X-CSRFToken'] = csrftoken;
 
             // Realizar la solicitud POST a la API
-            axios.post('http://0.0.0.0:8002/ticket/', formData)
+            axios.post('http://192.168.49.2:31828/ticket/', formData)
                 .then(function(response) {
                     alert('Datos guardados exitosamente.');
                     // Redirigir a la página de ticket después de la carga exitosa
@@ -106,7 +106,7 @@
         var tableBody = document.getElementById('data-table-body');
 
         // Realizar la solicitud GET a la API para obtener los datos financieros
-        axios.get('http://0.0.0.0:8002/datos_financieros/')
+        axios.get('http://192.168.49.2:31828/datos_financieros/')
             .then(function(response) {
                 var data = response.data;
 
