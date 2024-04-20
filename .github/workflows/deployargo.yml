@@ -12,13 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Argo CD CLI
-        run: |
-          curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-          chmod +x /usr/local/bin/argocd
-
-      - name: Sync applications
-        run: |
-          argocd login --insecure --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} 192.168.49.2:31013
-          argocd app sync django-gui 
-          argocd app sync django-backend
+      - name: Install Argo CD Action
+        uses: argoproj/argocd-action@v2
+        with:
+          server: 192.168.49.2:31013
+          username: ${{ secrets.ARGOCD_USERNAME }}
+          password: ${{ secrets.ARGOCD_PASSWORD }}
+          command: app sync
+          args: |
+            django-gui
+            django-backend
