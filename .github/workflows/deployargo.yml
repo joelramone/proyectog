@@ -1,26 +1,24 @@
 name: Argo CD Sync
-
 on:
-  push:
-    branches:
-      - main  # Actualiza Argo CD solo cuando se realiza un push en la rama main
+  workflow_run:
+    workflows: ["Docker Build and Deployment"]
+    types:
+      - completed
 
 jobs:
   sync:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup Argo CD CLI
-        uses: moneysupermarket/setup-argocd@v1
-        with:
-          argocd_server: ${{ secrets.ARGOCD_SERVER }}
-          argocd_token: ${{ secrets.ARGOCD_TOKEN }}
+      - name: Install Argo CD CLI
+        run: |
+          curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+          chmod +x /usr/local/bin/argocd
 
       - name: Sync applications
         run: |
+          argocd login --insecure --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} https://192.168.49.2:31013
           argocd app sync django-gui 
           argocd app sync django-backend
-        
