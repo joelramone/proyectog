@@ -8,5 +8,5 @@ image:
 service:
   name: django-backend
   type: ClusterIP
-  port: 80
+  port: 8002
 

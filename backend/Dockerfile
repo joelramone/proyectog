@@ -6,7 +6,7 @@ RUN mkdir /code
 WORKDIR /code
 
 # Copia los archivos de requerimientos (requirements.txt) al contenedor
-ADD requirements.txt /code/
+COPY requirements.txt .
 
 # Instala las dependencias del proyecto
 RUN pip install -r requirements.txt
@@ -18,4 +18,4 @@ ADD . /code/
 EXPOSE 8000
 
 # Define el comando para ejecutar el proyecto Django
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
