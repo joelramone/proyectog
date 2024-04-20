@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: joelramone/nginx-proxy
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: nginx-proxy
+  type: ClusterIP
+  port: 80
+
