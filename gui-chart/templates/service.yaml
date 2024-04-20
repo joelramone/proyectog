@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "django-gui.fullname" . }}
+spec:
+  selector:
+    app: {{ include "django-gui.name" . }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }}
+      targetPort: 80
+  type: {{ .Values.service.type }}
+

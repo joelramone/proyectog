@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: joelramone/django-process
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: django-process
+  type: ClusterIP
+  port: 80
+

@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: joelramone/django-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: django-backend
+  type: ClusterIP
+  port: 80
+

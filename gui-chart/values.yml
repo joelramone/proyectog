@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: joelramone/django-gui
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  name: django-gui
+  type: ClusterIP
+  port: 80
+
