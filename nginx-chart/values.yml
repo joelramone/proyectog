@@ -8,5 +8,5 @@ image:
 service:
   name: nginx-proxy
   type: ClusterIP
-  port: 80
+  port: 8080
 
