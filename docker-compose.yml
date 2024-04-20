@@ -8,8 +8,7 @@ services:
       - ./gui:/code
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+
   process:
     build: ./process
     command: python3 manage.py runserver 0.0.0.0:8001
@@ -17,8 +16,7 @@ services:
       - ./process:/code
     ports:
       - "8001:8001"
-    depends_on:
-      - db
+
   backend:
     build: ./backend
     command: python3 manage.py runserver 0.0.0.0:8002
@@ -26,16 +24,3 @@ services:
       - ./backend:/code
     ports:
       - "8002:8002"
-    depends_on:
-      - db
-  db:
-    image:  postgres:13.0-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
-
-    environment:
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DB}
-volumes:
-  postgres_data:  
