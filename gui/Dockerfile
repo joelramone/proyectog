@@ -15,7 +15,7 @@ RUN pip install -r requirements.txt
 ADD . /code/
 
 # Expone el puerto en el que se ejecuta el proyecto Django
-EXPOSE 8002
+EXPOSE 8000
 
 # Define el comando para ejecutar el proyecto Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
