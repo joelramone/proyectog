@@ -27,9 +27,7 @@ jobs:
         cd ../gui
         docker build -t ${{ secrets.DOCKER_USERNAME }}/django-gui .
         docker push ${{ secrets.DOCKER_USERNAME }}/django-gui
-        cd ../process
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/django-process .
-        docker push ${{ secrets.DOCKER_USERNAME }}/django-process
+
 
     - name: Start Docker Compose services
       run: docker-compose up -d

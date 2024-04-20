@@ -18,4 +18,4 @@ ADD . /code/
 EXPOSE 8002
 
 # Define el comando para ejecutar el proyecto Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8003"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

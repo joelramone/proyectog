@@ -1,0 +1,26 @@
+name: Argo CD Sync
+
+on:
+  push:
+    branches:
+      - main  # Actualiza Argo CD solo cuando se realiza un push en la rama main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Argo CD CLI
+        uses: moneysupermarket/setup-argocd@v1
+        with:
+          argocd_server: ${{ secrets.ARGOCD_SERVER }}
+          argocd_token: ${{ secrets.ARGOCD_TOKEN }}
+
+      - name: Sync applications
+        run: |
+          argocd app sync django-gui 
+          argocd app sync django-backend
+        
