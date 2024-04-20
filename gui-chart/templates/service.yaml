@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: {{ include "django-gui.fullname" . }}
+    app: {{ include "django-gui.name" . }}
   ports:
     - protocol: TCP
       port: {{ .Values.service.port }}
