@@ -15,7 +15,7 @@ jobs:
       - name: Install Argo CD Action
         uses: argoproj/argocd-action@v2
         with:
-          server: 192.168.49.2:31013
+          server: 192.168.49.2:30814
           username: ${{ secrets.ARGOCD_USERNAME }}
           password: ${{ secrets.ARGOCD_PASSWORD }}
           command: app sync
