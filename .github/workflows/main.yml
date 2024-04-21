@@ -21,9 +21,10 @@ jobs:
 
     - name: Build Docker images
       run: |
+        cd nginx
         docker build -t ${{ secrets.DOCKER_USERNAME }}/nginx-proxy .
         docker push ${{ secrets.DOCKER_USERNAME }}/nginx-proxy
-        cd backend
+        cd ../backend
         docker build -t ${{ secrets.DOCKER_USERNAME }}/django-backend .
         docker push ${{ secrets.DOCKER_USERNAME }}/django-backend
         cd ../gui
