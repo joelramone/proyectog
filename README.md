@@ -1,17 +1,15 @@
-Aquí tienes el README.md con un formato mejorado:
-
-markdown
-Copy code
-# proyectog
-
+#ProyectoG
 ## Estructura del Repositorio
 
 El repositorio cuenta con la siguiente estructura, simplificada para su comprensión:
 
+
+# Estructura del Repositorio
+```
 proyectog/
 ├── backend/
 │ ├── backendapp/
-│ ├── backend_project/
+│ └── backend_project/
 ├── backend-chart/
 │ ├── Chart.yaml
 │ ├── templates/
@@ -48,7 +46,7 @@ proyectog/
 ├── README.md
 ├── requirements.txt
 └── venv/
-
+```
 makefile
 Copy code
 
@@ -83,6 +81,7 @@ Copy code
 └── workflows/
     ├── deployargo.yml
     └── main.yml
+```
 El archivo main.yml contiene los jobs necesarios para:
 
 Realizar el build de las imágenes Docker para django-gui, django-backend, y nginx.
