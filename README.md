@@ -1,4 +1,4 @@
-##ProyectoG
+# ProyectoG
 
 
 El repositorio cuenta con la siguiente estructura, simplificada para su comprensión:
