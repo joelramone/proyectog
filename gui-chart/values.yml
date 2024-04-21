@@ -7,6 +7,6 @@ image:
 
 service:
   name: django-gui
-  type: ClusterIP
+  type: NodePort
   port: 8000
 
